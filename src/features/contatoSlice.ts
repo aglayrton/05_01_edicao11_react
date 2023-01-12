@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
 import Contatos from "../models/contatoModels";
 
-const baseUrl = "https://backend-edicao-10-front-iii.vercel.app";
+const baseUrl = "http://localhost:3003/clientes";
 
 //GET
 export const getContatos = createAsyncThunk(
