@@ -1,10 +1,11 @@
-import React from 'react';
-import Page from './pages/CadContatos';
-import PageDisney from './pages/Disney';
+import React from "react";
+import Page from "./pages/CadContatos";
+import PageDisney from "./pages/Disney";
 
 function App() {
   return (
-    <PageDisney />
+    // <PageDisney />
+    <Page />
   );
 }
 
