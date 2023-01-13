@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
 import Contatos from "../models/contatoModels";
 
-const baseUrl = "http://localhost:3003/clientes";
+const baseUrl = "https://novoback.vercel.app/clientes";
 
 //GET ACTIONS
 export const getContatos = createAsyncThunk(
