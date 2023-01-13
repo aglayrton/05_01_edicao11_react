@@ -7,7 +7,7 @@ const Page: React.FC = () => {
   const { data } = useAppSelector((state) => state.contato);
 
   console.log(data);
-  
+
   const[nome, setNome] = useState("");
   const[email, setEmail] = useState("");
   const[telefone, setTelefone] = useState("");

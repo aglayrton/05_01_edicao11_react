@@ -2,11 +2,11 @@ import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios";
 import Contatos from "../models/contatoModels";
 
-const baseUrl = "https://swapi.dev/api/people/";
+const baseUrl = "http://localhost:3003/clientes";
 
-//GET
+//GET ACTIONS
 export const getContatos = createAsyncThunk(
-  //nome do diasparo da action
+  //nome do disparo da action
   "/contatos/all",
   //funcao promise
   async () => {
@@ -19,6 +19,23 @@ export const getContatos = createAsyncThunk(
       return response;
   }
 );
+
+
+export const getContatosId = createAsyncThunk(
+  //nome do disparo da action
+  "/contatos/all",
+  //funcao promise
+  async (id: number) => {
+    const response : Contatos[] = await axios
+      .get(`http://localhost:3003/clientes/${id}`)
+      .then((response) => response.data)
+      .catch((err) => {
+        console.log(err);
+      });
+      return response;
+  }
+);
+
 
 //POST
 export const addContatos = createAsyncThunk(
@@ -50,6 +67,7 @@ const initialState = {
   error: null,
 } as ContatosInitial;
 
+//FUNCAO DE PEDAÇOS DE REDUCERS
 const getContatoSlice = createSlice({
   name: "contatos",
   initialState,
